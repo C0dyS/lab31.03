@@ -31,6 +31,8 @@ class MathClass:
 
     @staticmethod
     def arithmetic_mean(*args):
+        if not args:
+            return None
         summ = 0
         for _ in args:
             summ += _
