@@ -5,7 +5,7 @@ class Student:
         self.grade = grade
         self.courses = courses
         if not isinstance(courses, list):
-            raise TypeError("Name must be a list")
+            raise TypeError("courses must be a list")
 
     def add_course(self, new_course):
         self.courses.append(new_course)
