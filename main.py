@@ -1,35 +1,40 @@
-class Area_calculator:
-    _amount_of_uses = 0
+class MathClass:
     @staticmethod
-    def right_angled_triangle_area(b,h):
-        Area_calculator._amount_of_uses += 1
-        return (1/2)*b*h
+    def max(*args):
+        if not args:
+            return None
+        largest_number_founder = args[0]
+        for _ in args:
+            if _ > largest_number_founder:
+                largest_number_founder = _
+        return largest_number_founder
     @staticmethod
-    def isosceles_triangle_area(a,b):
-        Area_calculator._amount_of_uses += 1
-        return (1/4)*b*((4*a**2)-b**2)**(1/2)
+    def min(*args):
+        if not args:
+            return None
+        smallest_number_founder = args[0]
+        for _ in args:
+            if _ < smallest_number_founder:
+                smallest_number_founder = _
+        return smallest_number_founder
     @staticmethod
-    def equilateral_triangle_area(a):
-        Area_calculator._amount_of_uses += 1
-        return (3/(4*a**2))**(1/2)
-    @staticmethod
-    def rectangle_area(a):
-        Area_calculator._amount_of_uses += 1
-        return a**2
-    @staticmethod
-    def romb_area(d_1,d_2):
-        Area_calculator._amount_of_uses +=1
-        return d_1*d_2/2
-    @staticmethod
-    def get_amount_of_uses():
-        return Area_calculator._amount_of_uses
+    def factorial(a):
+        result = 1
+        if a < 0:
+            raise ValueError("negative number")
+        elif a == 1:
+            return 1
+        else:
+            for i in range(1,a+1):
+                result *= i
+            return result
 
-print(Area_calculator.romb_area(1,3))
-print(Area_calculator.get_amount_of_uses())
-print(Area_calculator.romb_area(1,3))
-print(Area_calculator.get_amount_of_uses())
-print(Area_calculator.romb_area(1,3))
-print(Area_calculator.get_amount_of_uses())
+    @staticmethod
+    def arithmetic_mean(*args):
+        summ = 0
+        for _ in args:
+            summ += _
+        return summ/len(args)
 
 
 
